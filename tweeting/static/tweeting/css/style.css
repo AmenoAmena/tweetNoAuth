@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    color: black;
+}
+.tweets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addPost {
+    height: 5%;
+    background-color:lightblue;
+    width: 3%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position:fixed;
+    top: 5%;
+    left: 90%;
+    border: none;
+}
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tweet</title>
+</head>
+<body>
+    <form action="{% url 'add' %}" method="post" autocomplete="off">
+        {% csrf_token %}
+        <h2>Add tweet</h2>
+        {{form}}
+        <button type="submit">Add Tweet</button>
+    </form>
+</body>
+</html>

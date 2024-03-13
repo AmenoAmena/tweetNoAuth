@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweeter</title>
+    <link rel="stylesheet" href="{% static 'tweeting/css/style.css' %}">
+</head>
+<body>
+    <h1>This is tweeter</h1>
+    
+        <button onclick="addUrl()" class="addPost">+</button>
+
+    {% for tweet in tweets %}
+        <h2>{{tweet.title}}</h2>
+        <p>{{tweet.content}}</p>
+        <hr>
+    {% endfor %}
+
+    <script src="{% static 'tweeting/js/app.js' %}"></script>
+</body>
+</html>
