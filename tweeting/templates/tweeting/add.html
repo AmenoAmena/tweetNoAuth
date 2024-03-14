@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Tweet</title>
+    <link rel="stylesheet" href="{% static 'tweeting/css/styleAdd.css' %}">
 </head>
 <body>
     <form action="{% url 'add' %}" method="post" autocomplete="off">
@@ -12,5 +14,9 @@
         {{form}}
         <button type="submit">Add Tweet</button>
     </form>
+    <br>
+    <br>
+    <button class="seeTweet" onclick="seeUrl()">See Tweets</button>
+    <script src="{% static 'tweeting/js/appAdd.js'%}"></script>
 </body>
 </html>
