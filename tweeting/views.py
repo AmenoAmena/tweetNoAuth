@@ -4,15 +4,11 @@ from .models import Tweet
 
 # Create your views here.
 def index(request,id=0):
-    if request.method == 'GET':
-        if id == 0:
-            form = TweetForm()
-        else:
-            tweets = Tweet.objects.get(pk=id)
-            form = TweetForm(instance=task)
+    form = TweetForm()
     tweets = Tweet.objects.all()
     return render(request,'tweeting/index.html',{
         'tweets':tweets,
+        'form':form
         })
 
 def add(request):
@@ -33,3 +29,13 @@ def delete(request, id):
     tweet = Tweet.objects.get(pk=id)
     tweet.delete()
     return redirect('index')
+
+def update(request, id):
+    tweet = Tweet.objects.get(pk=id)
+    form = TweetForm(instance=tweet)
+    if request.method == 'POST':
+        form = TweetForm(request.POST, instance=tweet)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    return render(request, 'tweeting/update.html', {'form': form})

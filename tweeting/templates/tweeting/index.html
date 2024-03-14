@@ -20,6 +20,7 @@
             {% csrf_token %}         
             <button type="submit"><i class="fa-solid fa-trash"></i></button>
     </form>
+    <a href="{% url 'update' tweet.id %}"><i class="fa-regular fa-pen-to-square"></i></a>
         <hr>
     {% endfor %}
 
